@@ -22,3 +22,4 @@ Route::get('faq', 'HomeController@faq');
 Route::get('gallery', 'HomeController@gallery');
 Route::get('team', 'HomeController@team');
 Route::get('testimonial', 'HomeController@testimonial');
+Route::post('joinus', 'HomeController@join');

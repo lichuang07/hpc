@@ -5,7 +5,7 @@
 	<div class="container">
 		<h4 class="title">Gallery</h4>
 		<h3 class="title1">OUR CLUB <span>FLAV</span>ORS ARE</h3>
-		<div class="gallery-row">
+		<div class="gallery-row row">
 			<div class="col-md-4 gallery-grids grid">
 				<figure class="effect-ming wow zoomIn animated" data-wow-delay=".5s">
 					<a href="images/p1.jpg" class="swipebox">
@@ -30,6 +30,7 @@
 					</a>	
 				</figure>
 			</div>
+			<div class="col-md-12 row">
 			<div class="col-md-6 gallery-grids gallery-btm grid">
 				<figure class="effect-ming wow zoomIn animated" data-wow-delay=".5s">
 					<a href="images/img9.jpg" class="swipebox">
@@ -45,6 +46,7 @@
 						<figcaption><h5><span>R</span></h5></figcaption>	
 					</a>	
 				</figure>
+			</div>
 			</div>
 			<div class="col-md-4 gallery-grids grid">
 				<figure class="effect-ming wow zoomIn animated" data-wow-delay=".5s">

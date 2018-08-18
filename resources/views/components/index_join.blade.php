@@ -20,21 +20,22 @@
 <div class="pop-up">
 <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">join now</a>
 <div id="small-dialog" class="book-form mfp-hide">
-    <form action="mailto:1793000795@qq.com" enctype="text/plain">
+    <form action="/joinus" method="post">
+        {{ csrf_field() }}
         <label>年级院系专业</label>
-        <input id="yuan" type="text" required="required">
+        <input id="yuan" name="yuan" type="text" required="required">
         <div class="form-left">
             <label>姓名</label>
-            <input id="name" type="text" value="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '佚名';}" required="required">
+            <input id="name" name="name" type="text" value="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '佚名';}" required="required">
         </div>
         <div class="form-right">
             <label>备注</label>
-            <input id="msg" type="text" value="可不填" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+            <input id="msg" name="msg" type="text" value="可不填" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
         </div>
         <div class="clearfix"> </div>
         <label>手机</label>
-        <input id="phone" type="text" value="Contact Info" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Contact';}" required="required">
-        <input type="button" onclick="getMailtoUrl()" value="Join Now">
+        <input id="mobile" name="mobile" type="text" value="Contact Info" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Contact';}" required="required">
+        <input type="submit" value="Join Now">
     </form>
 </div>
 

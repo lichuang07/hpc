@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NewPartner;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -41,5 +42,12 @@ class HomeController extends Controller
     {
         $data['title']='Testimonial';
         return view('testimonial', $data);
+    }
+    public function join(Request $request)
+    {
+        NewPartner::create($request->all());
+        $data['title']='Home';
+        $data['banner']='components.index_join';
+        return view('index', $data);
     }
 }

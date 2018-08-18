@@ -38,7 +38,7 @@
 </head>
 <body>
 	<!--banner-->
-	<div class="banner">
+	<div class="banner about-bnr">
 	    <div class="bnr-img">
 			<img class="wow fadeInLeftBig animated" data-wow-delay=".5s" src="images/a.png" alt=""/>
 		</div>
