@@ -23,3 +23,6 @@ Route::get('gallery', 'HomeController@gallery');
 Route::get('team', 'HomeController@team');
 Route::get('testimonial', 'HomeController@testimonial');
 Route::post('joinus', 'HomeController@join');
+Route::group(['prefix' => 'admins'], function () {
+    Route::get('/', 'AdminController@index');
+});

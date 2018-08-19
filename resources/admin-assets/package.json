@@ -1,0 +1,12 @@
+{
+  "name": "admin-assets",
+  "version": "1.0.0",
+  "description": "for admin-let",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lichuang",
+  "license": "ISC",
+  "private": "true"
+}
