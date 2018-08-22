@@ -29,7 +29,7 @@ source ~/.bash_profile(如果使用的其他bash如zsh代码要加在相应文�
 1. 克隆源代码
 克隆源代码到本地：
 cd 你的自定义目录
-git clone ggit@git.musikid.net:musikid/musikid-io.git
+git clone git@github.com:lichuang07/hpc.git
 
 2. 配置 hosts 文件
 echo "192.168.10.10   hpc.test" | sudo tee -a /etc/hosts(也可打开hosts文件加入192.168.10.10   hpc.test)
