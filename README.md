@@ -19,13 +19,14 @@ Mac OSX 安装 Homestead
  
 4. 把 homestead 加入系统全局命令
 vim ~/.bash_profile
-# 最后一行加入
+最后一行加入
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
 source ~/.bash_profile(如果使用的其他bash如zsh代码要加在相应文件)
 
 项目安装和配置
+
 1. 克隆源代码
 克隆源代码到本地：
 cd 你的自定义目录
@@ -35,6 +36,7 @@ git clone git@github.com:lichuang07/hpc.git
 echo "192.168.10.10   hpc.test" | sudo tee -a /etc/hosts(也可打开hosts文件加入192.168.10.10   hpc.test)
 
 3. 配置本地的 Homestead 环境
+
 1). 运行以下命令编辑 Homestead.yaml 文件
 vim ~/Homestead/Homestead.yaml
 
