@@ -13,10 +13,11 @@
 			<div class="col-md-4 footer-left wow fadeInDown animated" data-wow-delay=".5s">
 				<h4>Details</h4>
 				<ul>
-					<li><a href="about.html"><i class="glyphicon glyphicon-chevron-right"></i> 关于</a></li>
-					<li><a href="gallery.html"><i class="glyphicon glyphicon-chevron-right"></i> 相册</a></li>
+					<li><a href="/about"><i class="glyphicon glyphicon-chevron-right"></i> 关于</a></li>
+					<li><a href="/gallery"><i class="glyphicon glyphicon-chevron-right"></i> 相册</a></li>
 					<!--<li><a href="codes.html"><i class="glyphicon glyphicon-chevron-right"></i> Short Codes</a></li>-->
-					<li><a href="contact.html"><i class="glyphicon glyphicon-chevron-right"></i> 联系</a></li>
+					<li><a href="/contact"><i class="glyphicon glyphicon-chevron-right"></i> 联系</a></li>
+					<li><a href="/admins"><i class="glyphicon glyphicon-chevron-right"></i> 后台</a></li>
 				</ul>
 			</div>
 			<div class="col-md-4 footer-right wow fadeInDown animated" data-wow-delay=".5s">

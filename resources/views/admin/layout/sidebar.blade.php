@@ -1,14 +1,14 @@
-<!-- Left side column. contains the sidebar -->
+Left side column. contains the sidebar -->
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p>{{hpcAuth()->user()->nickname}}</p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
@@ -26,20 +26,20 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          <span class="pull-right-container">
+      <li class="{{$action=='index'?'active':''}}">
+        <a href="/admins">
+          <i class="fa fa-dashboard"></i> <span>首页</span>
+          <!-- <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
-          </span>
+          </span> -->
         </a>
-        <ul class="treeview-menu">
+        <!-- <ul class="treeview-menu">
           <li><a href="admin/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
           <li><a href="admin/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-        </ul>
+        </ul> -->
       </li>
-      <li class="treeview active">
-        <a href="#">
+      <li class="{{$action=='newPartner'?'active':''}}">
+        <a href="/admins/new_partner">
           <i class="fa fa-files-o"></i>
           <span>新社员登记</span>
           <span class="pull-right-container">
@@ -54,7 +54,7 @@
           </li>
         </ul> -->
       </li>
-      <li>
+     <!--  <li>
         <a href="../widgets.html">
           <i class="fa fa-th"></i> <span>Widgets</span>
           <span class="pull-right-container">
@@ -76,25 +76,28 @@
           <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
           <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
         </ul>
-      </li>
-      <li class="treeview">
+      </li> -->
+      <li class="treeview {{$action=='profile'?'active':''}}">
         <a href="#">
           <i class="fa fa-laptop"></i>
-          <span>UI Elements</span>
+          <span>个人中心</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-          <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-          <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+          @if(!hpcAuth()->isRegistered())
+          <li><a onclick="Modal.remote('club_register', '/admins/profile/register')"><i class="fa fa-circle-o"></i> 社员注册</a></li>
+          @else
+          <li><a href="/admins/profile/dashboard"><i class="fa fa-circle-o"></i> 个人信息管理</a></li>
+          @endif
+          <!-- <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
           <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
           <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-          <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+          <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li> -->
         </ul>
       </li>
-      <li class="treeview">
+      <!-- <li class="treeview">
         <a href="#">
           <i class="fa fa-edit"></i> <span>Forms</span>
           <span class="pull-right-container">
@@ -106,39 +109,49 @@
           <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
           <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
         </ul>
-      </li>
-      <li class="treeview">
+      </li> -->
+      @if(hpcAuth()->isAdmin())
+      <li class="treeview {{$action=='club'?'active':''}}">
         <a href="#">
-          <i class="fa fa-table"></i> <span>Tables</span>
+          <i class="fa fa-table"></i> <span>社团管理</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-          <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+          <li><a href="/admins/club/info"><i class="fa fa-circle-o"></i> 信息概览</a></li>
+          <li><a href="/admins/club/manage"><i class="fa fa-circle-o"></i> 社员管理</a></li>
         </ul>
       </li>
-      <li>
-        <a href="../calendar.html">
-          <i class="fa fa-calendar"></i> <span>Calendar</span>
+      @endif
+      <li class="{{$action=='calendar'?'active':''}}">
+        <a href="/admins/calendar/show">
+          <i class="fa fa-calendar"></i> <span>会议管理</span>
           <span class="pull-right-container">
             <small class="label pull-right bg-red">3</small>
             <small class="label pull-right bg-blue">17</small>
           </span>
         </a>
       </li>
-      <li>
-        <a href="../mailbox/mailbox.html">
-          <i class="fa fa-envelope"></i> <span>Mailbox</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-yellow">12</small>
-            <small class="label pull-right bg-green">16</small>
-            <small class="label pull-right bg-red">5</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
+      <li class="treeview {{$action=='mail'?'active':''}}">
+          <a href="#">
+            <i class="fa fa-envelope"></i> <span>邮件管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active">
+              <a href="/admins/mail/mailbox"><i class="fa fa-circle-o"></i>收件箱
+                <span class="pull-right-container">
+                  <span class="label label-primary pull-right">13</span>
+                </span>
+              </a>
+            </li>
+            <li><a href="/admins/mail/compose"><i class="fa fa-circle-o"></i>写邮件</a></li>
+          </ul>
+        </li>
+      <!-- <li class="treeview">
         <a href="#">
           <i class="fa fa-folder"></i> <span>Examples</span>
           <span class="pull-right-container">
@@ -156,10 +169,10 @@
           <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
           <li><a href="../examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
         </ul>
-      </li>
-      <li class="treeview">
+      </li> -->
+      <li class="treeview {{$action=='lesson'?'active':''}}">
         <a href="#">
-          <i class="fa fa-share"></i> <span>Multilevel</span>
+          <i class="fa fa-share"></i> <span>课程资料</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -190,7 +203,7 @@
           <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
         </ul>
       </li>
-      <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+      <!-- <li><a href="＃"><i class="fa fa-book"></i> <span>文档</span></a></li> -->
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -200,4 +213,4 @@
   <!-- /.sidebar -->
 </aside>
 
-<!-- =============================================== -->
+<!-- ===============================================

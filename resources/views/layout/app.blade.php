@@ -50,6 +50,7 @@
 				<li class="menu-item"><a class="menu-link" href="\gallery">GALLERY</a></li>
 				<!--<li class="menu-item"><a class="menu-link" href="codes.html">CODES</a></li>-->
 				<li class="menu-item"><a class="menu-link" href="\contact" >CONTACT</a></li>
+				<li class="menu-item"><a class="menu-link" href="/admins" >USER CENTER</a></li>
 			</ul>
 			<div class="clearfix"> </div>
 			<!-- script-for-menu -->

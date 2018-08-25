@@ -8,17 +8,26 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="admin/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/admin/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="admin/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/admin/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="/admin/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="admin/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/admin/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="admin/dist/css/skins/_all-skins.min.css">
-
+  <link rel="stylesheet" href="/admin/dist/css/skins/_all-skins.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/admin/plugins/iCheck/flat/blue.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="/admin/bower_components/fullcalendar/dist/fullcalendar.min.css">
+  <link rel="stylesheet" href="/admin/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+  
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -30,7 +39,7 @@
  <!--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
 </head>
 <!-- ADD THE CLASS sidebar-collapse TO HIDE THE SIDEBAR PRIOR TO LOADING THE SITE -->
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
 <header class="main-header">
@@ -53,6 +62,7 @@
 
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
+        @if(Auth::check())
         <!-- Messages: style can be found in dropdown.less-->
         <li class="dropdown messages-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -67,7 +77,7 @@
                 <li><!-- start message -->
                   <a href="#">
                     <div class="pull-left">
-                      <img src="admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <h4>
                       Support Team
@@ -138,17 +148,17 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">Alexander Pierce</span>
+            <img src="/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+            <span class="hidden-xs">{{Auth::user()->nickname}}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <img src="admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
               <p>
-                Alexander Pierce - Web Developer
-                <small>Member since Nov. 2012</small>
+                {{hpcAuth()->user()->nickname}} - hpc club
+                <small>Member since {{Auth::user()->created_at->toDateString()}}</small>
               </p>
             </li>
             <!-- Menu Body -->
@@ -169,10 +179,16 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="/admins/profile/dashboard" class="btn btn-default btn-flat">个人中心</a>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    退出
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                </form>
               </div>
             </li>
           </ul>
@@ -181,6 +197,15 @@
         <li>
           <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
         </li>
+        @else
+        <a href="/login" class="btn btn-primary"  role="button">
+          登录
+        </a>
+        <span>/</span>
+        <a href="/register" class="btn  btn-primary"  role="button">
+          注册
+        </a>
+        @endif
       </ul>
     </div>
   </nav>

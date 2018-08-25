@@ -25,15 +25,26 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admins';
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * 定义验证字段 默认为email
+     *
+     * @Author   lichuang
+     * @DateTime 2018-08-22
+     *
+     * @return [type] [description]
+     */
+    public function username()
+    {
+        return 'name';
     }
 }
