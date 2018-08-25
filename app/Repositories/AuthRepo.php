@@ -18,7 +18,7 @@ class AuthRepo
      */
     public static function isAdmin()
     {
-        if (Auth::user()->admin <= 1) {
+        if (Auth::check() && Auth::user()->admin <= 1) {
             return true;
         } else {
             return false;
@@ -37,12 +37,16 @@ class AuthRepo
      */
     public static function user($uid = 0)
     {
-        $id = 0 == $uid ? Auth::id() : $uid;
+        if (Auth::check()) {
+            $id = 0 == $uid ? Auth::id() : $uid;
 
-        return User::select('users.id', 'users.name', 'users.nickname', 'users.admin', 'users.avatar', 'users.email', 'si.name as truename', 'si.mobile', 'si.grade', 'si.college', 'si.major', 'si.othermsg', 'si.status')
+            return User::select('users.id', 'users.name', 'users.nickname', 'users.admin', 'users.avatar', 'users.email', 'si.name as truename', 'si.mobile', 'si.grade', 'si.college', 'si.major', 'si.othermsg', 'si.status')
                  ->where('users.id', $id)
                 ->leftJoin('school_info as si', 'users.id', '=', 'si.user_id')
                 ->first();
+        }
+
+        return false;
     }
 
     /**
@@ -87,12 +91,14 @@ class AuthRepo
      */
     public static function isMember($uid = 0)
     {
-        $status = 0 == $uid ? self::user()->status : self::user($uid)->status;
-        if (2 == $status || 3 == $status) {
-            return true;
-        } else {
-            return false;
+        if (Auth::check()) {
+            $status = 0 == $uid ? self::user()->status : self::user($uid)->status;
+            if (2 == $status || 3 == $status) {
+                return true;
+            }
         }
+
+        return false;
     }
 
     /**
@@ -107,11 +113,15 @@ class AuthRepo
      */
     public function isRegistered($uid = 0)
     {
-        $status = 0 == $uid ? self::user()->status : self::user($uid)->status;
-        if (0 == $status) {
-            return false;
-        } else {
-            return true;
+        if (Auth::check()) {
+            $status = 0 == $uid ? self::user()->status : self::user($uid)->status;
+            if (0 == $status) {
+                return false;
+            } else {
+                return true;
+            }
         }
+
+        return false;
     }
 }

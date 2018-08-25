@@ -104,7 +104,6 @@
                 <th>手机</th>
                 <th>权限</th>
                 <th>操作</th>
-                <th>确认</th>
               </tr>
               </thead>
               <tbody>
@@ -148,7 +147,6 @@
                   </ul>
                 </div>
                 </td>
-                <td>{{$info->othermsg}}</td>
               </tr>
               @endforeach
               </tbody>

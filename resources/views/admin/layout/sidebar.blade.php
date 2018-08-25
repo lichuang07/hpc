@@ -8,7 +8,11 @@ Left side column. contains the sidebar -->
         <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
+        @if(hpcAuth()->check())
         <p>{{hpcAuth()->user()->nickname}}</p>
+        @else
+        <p>尚未登录</p>
+        @endif
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
