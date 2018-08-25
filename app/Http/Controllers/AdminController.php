@@ -57,11 +57,9 @@ class AdminController extends Controller
             $info = $request->all();
             $info['status'] = 1;
             $info['user_id'] = Auth::id();
-            $msg['status'] = 2;
+            $msg['status'] = 1;
             $msg['msg'] = 'success';
             if (SchoolInfo::create($info)) {
-                $this->adminRepo->permissionUpdate(Auth::id(), 2);
-
                 return response()->json($msg);
             }
         }
@@ -94,6 +92,7 @@ class AdminController extends Controller
         $msg = ['status' => 0, 'msg' => 'error'];
 
         if (SchoolInfo::where('user_id', $id)->update(['status' => 2])) {
+            $this->adminRepo->permissionUpdate($id, 2);
             $msg = ['status' => 1, 'msg' => 'success'];
         }
 
