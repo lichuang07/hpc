@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\NewPartner;
 use App\Models\SchoolInfo;
+use App\Models\ClubPublic;
 use Auth;
 use App\Repositories\AdminRepo;
 
@@ -23,7 +24,7 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         $this->data['title'] = '后台管理-新社员注册';
-        $this->data['newInfo'] = NewPartner::get();
+        $this->data['publics'] = $this->adminRepo->getPublics();
         $this->data['action'] = 'index';
 
         return view('admin.index', $this->data);
@@ -141,6 +142,57 @@ class AdminController extends Controller
         if (hpcAuth()->isAdmin()) {
             $this->adminRepo->permissionUpdate($uid, 1);
             $msg = ['status' => 1, 'msg' => '已设为管理员'];
+        }
+
+        return response()->json($msg);
+    }
+
+    public function registerDel($uid)
+    {
+        $msg = ['status' => 0, 'msg' => 'error'];
+
+        if (SchoolInfo::where('user_id', $id)->update(['status' => 0])) {
+            $msg = ['status' => 1, 'msg' => '已删除注册信息'];
+        }
+
+        return response()->json($msg);
+    }
+
+    public function publicManage(Request $request)
+    {
+        $this->data['title'] = '后台管理-公告管理';
+        $this->data['action'] = 'club';
+        $this->data['publics'] = $this->adminRepo->getPublics();
+        $this->data['method'] = 'public';
+
+        return view('admin.club_public', $this->data);
+    }
+
+    public function newPublics(Request $request)
+    {
+        $msg = ['status' => 0, 'msg' => '失败,无法发布公告'];
+        $this->data['title'] = '后台管理-公告管理';
+        $this->data['action'] = 'club';
+
+        if (Auth::check()) {
+            $pub = $request->all();
+            $pub['user_id'] = Auth::id();
+            if (ClubPublic::create($pub)) {
+                $msg = ['status' => 1, 'msg' => '成功,已发布新公告'];
+            }
+        }
+
+        $this->data['publics'] = $this->adminRepo->getPublics();
+        $this->data['msg'] = $msg;
+
+        return redirect('admins/club/public');
+    }
+
+    public function delPublic($pid)
+    {
+        $msg = ['status' => 0, 'msg' => '删除失败'];
+        if ($this->adminRepo->delPublic($pid)) {
+            $msg = ['status' => 1, 'msg' => '已删除公告'];
         }
 
         return response()->json($msg);

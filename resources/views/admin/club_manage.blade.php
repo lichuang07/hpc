@@ -40,6 +40,7 @@
                 <th>专业</th>
                 <th>状态</th>
                 <th>备注</th>
+                <th>操作</th>
               </tr>
               </thead>
               <tbody>
@@ -71,6 +72,20 @@
                     @endswitch
                 </td>
                 <td>{{$info->othermsg}}</td>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-flat">操作</button>
+                  <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a uid="{{$info->id}}" method="1" href="#">通过</a></li>
+                    <li><a uid="{{$info->id}}" method="2" href="#">删除</a></li>
+                    <li><a uid="{{$info->id}}" method="" href="#">暂无</a></li>
+                    <li class="divider"></li>
+                    <!-- <li><a href="#">Separated link</a></li> -->
+                  </ul>
+                </div>
               </tr>
               @endforeach
               </tbody>

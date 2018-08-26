@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\User;
 use App\Models\SchoolInfo;
+use App\Models\ClubPublic;
 
 /**
  * summary
@@ -90,5 +91,51 @@ class AdminRepo
         User::where('id', $uid)->update(['admin' => $permission]);
 
         return true;
+    }
+
+    /**
+     * 获得所有公告
+     *
+     * @Author   lichuang
+     * @DateTime 2018-08-26
+     *
+     * @param bool $all 是否获取已删除公告
+     *
+     * @return [type] [description]
+     */
+    public function getPublics($all = false)
+    {
+        if ($all) {
+            $query = ClubPublic::select('publics.*', 'users.nickname')
+                ->join('users', 'publics.user_id', '=', 'users.id')
+                ->get();
+        } else {
+            $query = ClubPublic::select('publics.*', 'users.nickname')
+                ->join('users', 'publics.user_id', '=', 'users.id')
+                ->where('publics.del', 0)
+                ->get();
+        }
+
+        return $query;
+    }
+
+    /**
+     * 删除公告
+     *
+     * @Author   lichuang
+     * @DateTime 2018-08-26
+     *
+     * @param int $pid 公告id
+     *
+     * @return [type] [description]
+     */
+    public function delPublic($pid)
+    {
+        $result = false;
+        if (hpcAuth()->isAdmin()) {
+            $result = ClubPublic::where('id', $pid)->update(['del' => 1]);
+        }
+
+        return $result;
     }
 }

@@ -36,20 +36,16 @@
         </div>
       </div>
       <div class="box-body">
-       	<div class="row">
+       	<div class="row text-center">
        		<div class="row">
-       			<div class="col-sm-1"></div>
-       			<div class="col-sm-3">院系</div>
-       			<div class="col-sm-3">联系方式</div>
+       			<div class="col-sm-4">院系</div>
+       			<div class="col-sm-4">联系方式</div>
        			<div class="col-sm-4">备注</div>
-       			<div class="col-sm-1"></div>
        		</div>
        		<div class="row">
-       			<div class="col-sm-1"></div>
-       			<div class="col-sm-3">{{$info->yuan}}</div>
-       			<div class="col-sm-3">{{$info->mobile}}</div>
+       			<div class="col-sm-4">{{$info->yuan}}</div>
+       			<div class="col-sm-4">{{$info->mobile}}</div>
        			<div class="col-sm-4">{{$info->msg}}</div>
-       			<div class="col-sm-1"></div>
        		</div>
        	</div>
       </div>

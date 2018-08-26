@@ -1,19 +1,33 @@
 
   $(function(){
-    $('#unAudit tr').click(function(){
+    $('#unAudit a').click(function(){
       var uid = $(this).attr('uid');
-      var status=$(this).children('td[status]').attr('status');
-      if(status==1){
+      var method = $(this).attr('method');
+      if(method==1){
         if(confirm('是否通过审核？')){
           $.get('/admins/club/register_confirm/'+uid, function(data,status){
             if(data.status==1){
               alert('已通过审核');
               window.location.reload();
+            }else{
+              alert(data.msg);
             }
           });
         }
+      }else if(method==2){
+
+        if(confirm('是否删除该注册信息？')){
+          $.get('/admins/club/register_del/'+uid, function(data,status){
+            if(data.status==1){
+              alert('已删除');
+              window.location.reload();
+            }else{
+              alert(data.msg);
+            }
+          });
+        };
       }else{
-        alert('已注册');
+        alert('暂空');
       }
     });
     $('#audited a').click(function(){

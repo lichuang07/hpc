@@ -456,6 +456,9 @@
       //Remove event from text input
       $('#new-event').val('')
     })
+    $(function (){
+      $("[data-toggle='popover']").popover();
+    });
   })
 </script>
 </body>

@@ -35,7 +35,11 @@ Route::group(['prefix' => 'admins'], function () {
     Route::group(['prefix' => 'club'], function () {
         Route::get('info', 'AdminController@clubInfo');
         Route::get('manage', 'AdminController@clubManage');
+        Route::get('public', 'AdminController@publicManage');
+        Route::get('del_public/{pid}', 'AdminController@delPublic');
+        Route::post('new_publics', 'AdminController@newPublics');
         Route::get('register_confirm/{uid}', 'AdminController@registerConfirm');
+        Route::get('register_del/{uid}', 'AdminController@registerDel');
     });
     Route::group(['prefix' => 'mail'], function () {
         Route::get('mailbox', 'AdminController@mailbox'); //收件箱

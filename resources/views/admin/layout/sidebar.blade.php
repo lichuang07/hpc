@@ -125,6 +125,7 @@ Left side column. contains the sidebar -->
         <ul class="treeview-menu">
           <li><a href="/admins/club/info"><i class="fa fa-circle-o"></i> 信息概览</a></li>
           <li><a href="/admins/club/manage"><i class="fa fa-circle-o"></i> 社员管理</a></li>
+          <li><a href="/admins/club/public"><i class="fa fa-circle-o"></i> 公告管理</a></li>
         </ul>
       </li>
       @endif
