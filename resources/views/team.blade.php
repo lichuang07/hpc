@@ -72,13 +72,13 @@
 <div class="skill">
 	<div class="container">
 		<h4 class="title wow fadeInDown animated" data-wow-delay=".5s">社团活动</h4>
-		<h3 class="title1 wow fadeInDown animated" data-wow-delay=".5s">除了学习，竞赛<span>还有</span>**、**、**、**、**、**、**和**</h3>
+		<h3 class="title1 wow fadeInDown animated" data-wow-delay=".5s">除了学习，竞赛<span>还有</span>．．．</h3>
 		<div class="skill-info">
 			<ul>
-				<li class="wow fadeInLeftBig animated" data-wow-delay=".5s"><div class="demo demo-1" data-percent="40"></div><p>学习</p></li>
-				<li class="wow fadeInRightBig animated" data-wow-delay=".5s"><div class="demo demo-2" data-percent="20"></div><p>竞赛</p> </li>
-				<li class="wow fadeInLeftBig animated" data-wow-delay=".5s"><div class="demo demo-3" data-percent="20"></div><p>**</p> </li>
-				<li class="wow fadeInRightBig animated" data-wow-delay=".5s"><div class="demo demo-4" data-percent="20"></div><p>**</p> </li>
+				<li class="wow fadeInLeftBig animated" data-wow-delay=".5s"><div class="demo demo-1" data-percent="40"></div><p>openMP</p></li>
+				<li class="wow fadeInRightBig animated" data-wow-delay=".5s"><div class="demo demo-2" data-percent="20"></div><p>MPI</p> </li>
+				<li class="wow fadeInLeftBig animated" data-wow-delay=".5s"><div class="demo demo-3" data-percent="20"></div><p>openAcc</p> </li>
+				<li class="wow fadeInRightBig animated" data-wow-delay=".5s"><div class="demo demo-4" data-percent="20"></div><p>Linux</p> </li>
 			</ul>
 			<script>
 				$('.demo-1').percentcircle();

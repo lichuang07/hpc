@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="col-md-7 welcome-left">
 			<h4 class="title wow fadeInLeft animated" data-wow-delay=".5s">Welcome! </h4>
-			<h3 class="title1 wow fadeInLeft animated" data-wow-delay=".5s">高性能俱乐部 <br>2018年 <span>春季学习班</span>开始报名啦! </h3>
+			<h3 class="title1 wow fadeInLeft animated" data-wow-delay=".5s">高性能俱乐部 <br>2018年 <span>秋季学习班</span>开始报名啦! </h3>
 		</div>
 		<div class="col-md-5 welcome-right wow fadeInRightBig animated" data-wow-delay=".5s">
 			<h5>为了培养对计算机，并行计算，高性能计算感兴趣的同学，俱乐部每学期都会开展学习班，

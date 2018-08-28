@@ -42,50 +42,50 @@
 				<div class="menu-info">
 					<div class="menu-list-left">
 						<h4>主席<span>：</span></h4>
-						<p>*******</p>
+						<p></p>
 					</div>
 					<div class="menu-list-right">
-						<h5>**</h5>
+						<h5>李闯</h5>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="menu-info">
 					<div class="menu-list-left">
 						<h4>副主席<span>：</span></h4>
-						<p>*******</p>
+						<p></p>
 					</div>
 					<div class="menu-list-right">
-						<h5>**</h5>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="menu-info">
-					<div class="menu-list-left">
-						<h4>副主席<span>：</span></h4>
-						<p>******</p>
-					</div>
-					<div class="menu-list-right">
-						<h5>**</h5>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="menu-info">
-					<div class="menu-list-left">
-						<h4>团支书<span>：</span></h4>
-						<p>******</p>
-					</div>
-					<div class="menu-list-right">
-						<h5>**</h5>
+						<h5>桑桐</h5>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="menu-info">
 					<div class="menu-list-left">
 						<h4>秘书长<span>：</span></h4>
-						<p>******</p>
+						<p></p>
 					</div>
 					<div class="menu-list-right">
-						<h5>**</h5>
+						<h5>唐婷</h5>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="menu-info">
+					<div class="menu-list-left">
+						<h4>技术部长<span>：</span></h4>
+						<p></p>
+					</div>
+					<div class="menu-list-right">
+						<h5>张根</h5>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="menu-info">
+					<div class="menu-list-left">
+						<h4>宣传部长<span>：</span></h4>
+						<p></p>
+					</div>
+					<div class="menu-list-right">
+						<h5>刘江移</h5>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

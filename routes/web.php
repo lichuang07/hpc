@@ -20,6 +20,7 @@ Route::get('about', 'HomeController@about');
 Route::get('contact', 'HomeController@contact');
 Route::get('faq', 'HomeController@faq');
 Route::get('gallery', 'HomeController@gallery');
+Route::get('history', 'HomeController@history');
 Route::get('team', 'HomeController@team');
 Route::get('testimonial', 'HomeController@testimonial');
 Route::post('joinus', 'HomeController@join');

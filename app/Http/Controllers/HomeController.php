@@ -42,6 +42,7 @@ class HomeController extends Controller
     {
         $data['title'] = 'Home';
         $data['banner'] = 'components.index_join';
+        $data['action'] = 'home';
 
         return view('index', $data);
     }
@@ -57,8 +58,9 @@ class HomeController extends Controller
     public function about()
     {
         $data['title'] = 'About';
+        $data['action'] = 'about';
 
-        return view('about');
+        return view('about', $data);
     }
 
     /**
@@ -74,6 +76,7 @@ class HomeController extends Controller
     public function contact(Request $request)
     {
         $data['title'] = 'Contact';
+        $data['action'] = 'contact';
 
         return view('contact', $data);
     }
@@ -108,6 +111,7 @@ class HomeController extends Controller
     public function gallery(Request $request)
     {
         $data['title'] = 'Gallery';
+        $data['action'] = 'gallery';
 
         return view('gallery', $data);
     }
@@ -126,7 +130,7 @@ class HomeController extends Controller
     {
         $data['title'] = 'History';
 
-        return view('team', $data);
+        return view('history', $data);
     }
 
     /**
@@ -144,6 +148,23 @@ class HomeController extends Controller
         $data['title'] = 'Testimonial';
 
         return view('testimonial', $data);
+    }
+
+    /**
+     * 团队页
+     *
+     * @Author   lichuang
+     * @DateTime 2018-08-28
+     *
+     * @param Request $request [description]
+     *
+     * @return [type] [description]
+     */
+    public function team(Request $request)
+    {
+        $data['title'] = 'Team';
+
+        return view('team', $data);
     }
 
     /**

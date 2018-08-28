@@ -398,7 +398,7 @@
                 </div>
               </div>
               <!-- /.box-header -->
-              <div class="box-body no-padding">
+              <!-- <div class="box-body no-padding">
                 <ul class="users-list clearfix">
                   <li>
                     <img src="admin/dist/img/user1-128x128.jpg" alt="User Image">
@@ -441,8 +441,8 @@
                     <span class="users-list-date">15 Jan</span>
                   </li>
                 </ul>
-                <!-- /.users-list -->
-              </div>
+              </div> -->
+              <!-- /.users-list -->
               <!-- /.box-body -->
               <div class="box-footer text-center">
                 <a href="javascript:void(0)" class="uppercase">View All Users</a>

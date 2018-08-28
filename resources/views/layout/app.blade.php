@@ -45,11 +45,11 @@
 		<div class="top-nav">
 			<span class="menu"><img src="images/menu-icon.png" alt=""/></span>
 			<ul class="nav1 menu-list">
-				<li class="menu-item"><a class="menu-link" href="\index">HOME</a></li>
-				<li class="menu-item menu-item-current"><a class="menu-link" href="\about">ABOUT</a></li>
-				<li class="menu-item"><a class="menu-link" href="\gallery">GALLERY</a></li>
+				<li class="menu-item {{isset($action) && $action=='home'?'menu-item-current':''}}"><a class="menu-link" href="\index">HOME</a></li>
+				<li class="menu-item {{isset($action) && $action=='about'?'menu-item-current':''}}"><a class="menu-link" href="\about">ABOUT</a></li>
+				<li class="menu-item {{isset($action) && $action=='gallery'?'menu-item-current':''}}"><a class="menu-link" href="\gallery">GALLERY</a></li>
 				<!--<li class="menu-item"><a class="menu-link" href="codes.html">CODES</a></li>-->
-				<li class="menu-item"><a class="menu-link" href="\contact" >CONTACT</a></li>
+				<li class="menu-item {{isset($action) && $action=='contact'?'menu-item-current':''}}"><a class="menu-link" href="\contact" >CONTACT</a></li>
 				<li class="menu-item"><a class="menu-link" href="/admins" >USER CENTER</a></li>
 			</ul>
 			<div class="clearfix"> </div>

@@ -4,10 +4,10 @@
 			<div class="col-md-4 footer-left wow fadeInDown animated" data-wow-delay=".5s">
 				<h4>Information</h4>
 				<ul>
-					<li><a href="testimonial.html"><i class="glyphicon glyphicon-chevron-right"></i>  荣誉</a></li>
-					<li><a href="team.html"><i class="glyphicon glyphicon-chevron-right"></i> 我们</a></li>
-					<li><a href="history.html"><i class="glyphicon glyphicon-chevron-right"></i> 历程</a></li>
-					<li><a href="faq.html"><i class="glyphicon glyphicon-chevron-right"></i> 问题</a></li>
+					<li><a href="/testimonial"><i class="glyphicon glyphicon-chevron-right"></i>  荣誉</a></li>
+					<li><a href="/team"><i class="glyphicon glyphicon-chevron-right"></i> 我们</a></li>
+					<li><a href="/history"><i class="glyphicon glyphicon-chevron-right"></i> 历程</a></li>
+					<li><a href="/faq"><i class="glyphicon glyphicon-chevron-right"></i> 常见问题</a></li>
 				</ul>
 			</div>
 			<div class="col-md-4 footer-left wow fadeInDown animated" data-wow-delay=".5s">
