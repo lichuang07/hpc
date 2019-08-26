@@ -58,7 +58,7 @@ homestead provision
 
 4). 进入虚拟机环境
 homestead ssh
-cd /home/vagrant/musikid-io/
+cd /home/vagrant/hpc/
 
 !!注意!! 以下命令，均在 vagrant 虚拟机内执行
 
